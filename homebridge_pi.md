@@ -15,7 +15,7 @@ This is a short howto to setup a Raspberry Pi (3) as a Homebridge server with ca
 ## Configuring the Pi
 
 - start the configuration with ```sudo raspi-config```
-- set up hostname, locale and keyboard layout, expand the filesystem, enable the camera module etc.
+- set up hostname, wifi, locale and keyboard layout, expand the filesystem, enable the camera module etc.
 - reboot
 
 ## Installing Node.js and modules
