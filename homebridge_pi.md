@@ -32,6 +32,12 @@ Install Node.js and other packages
 apt install nodejs node-semver ffmpeg
 ```
 
+Optional set up a real root user
+
+```plaintext
+sudo passwd
+```
+
 This will install all relevant node modules.
 
 ```plaintext
@@ -152,4 +158,4 @@ pm2 startup
 
 ## Reboot and check
 
-After reboot check if the server is running by opening ```http://hostname:8083```. This will bring up the config UI. To login user "admin" as username and password. You can change the password later in the UI.
+After reboot check if the server is running by opening ```http://hostname:8083```. This will bring up the config UI. To login use "admin" as username and password. You can change the password later in the UI.
