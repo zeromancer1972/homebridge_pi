@@ -163,7 +163,7 @@ And this is the content in my case. You may want to alter it depending on the pl
 
 ### The Hue plugin
 
-The Philips Hue plugin is to control Osram Smart plugs that you added to the Hue system before. In my case it's just a plug that can be operated without using the Osram bridge by just adding it to the latest version of the Hue bridge. The users property in the config file is usually not predefined. Once you start homebridge on the command line (see chapter test installation) you will see a prompt to press the button on the bridge. This then will create a new user which credentials the plugin will print out on on the homebridge log in the console. Note down those credentials and place it in your config file.
+The Philips Hue plugin is to control Osram Smart plugs that you added to the Hue system before. In my case it's just a plug that can be operated without using the Osram bridge by just adding it to the latest version of the Hue bridge. The users property in the config file is usually not predefined. Once you start homebridge on the command line (see chapter test installation) you will see a prompt to press the button on the bridge. This then will create a new user whose credentials the plugin will print out on on the homebridge log in the console. Note down those credentials and place it in your config file.
 
 ## Test installation
 
