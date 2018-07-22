@@ -10,7 +10,7 @@ This is a short howto to setup a Raspberry Pi (3) as a Homebridge server with ca
 - Open image to access root file system. On a Mac it's just double clicking it
 - Create an empty file with ```touch ssh``` to enable ssh per default. On a Mac open a terminal and ```cd /Volumes/boot```
 - Flash to an SD card with e.g. [Etcher](https://etcher.io/)
-- start the Pi and locate it on the network
+- Start the Pi and locate it on the network. I use [Angry IP Scanner](https://angryip.org/) to find it, it's name should be "raspberrypi"
 - ssh to the Pi with ```ssh hosenameOrIpAddress -l pi```
 - the password for user pi is ```raspberry```
 
