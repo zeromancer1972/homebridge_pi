@@ -177,6 +177,12 @@ I am using pm2 to startup node scripts at boot time
 pm2 start homebridge
 ```
 
+Alternatively you can start homebridge in the so called "insecure" mode which allows you to control the devices over the web UI. I don't know what's insecure about that, but hey, you can decide. In this case the command is
+
+```plaintext
+pm2 start "homebridge -I"
+```
+
 To list the processes that pm2 is running type
 
 ```plaintext
