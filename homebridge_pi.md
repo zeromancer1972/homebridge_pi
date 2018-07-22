@@ -171,7 +171,9 @@ The Philips Hue plugin is to control Osram Smart plugs that you added to the Hue
 homebridge
 ```
 
-If no errors occur than congrats! You can stop the script with ```CTRL+C```
+If no errors occur then congrats! You can stop the script with ```CTRL+C```
+
+If you get errors then please Google them ;-)
 
 ## Add homebridge as a service at boot
 
