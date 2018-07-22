@@ -4,10 +4,10 @@ This is a short howto to setup a Raspberry Pi (3) as a Homebridge server with ca
 
 ## Preparing the Pi
 
-- download Raspbian Stretch Image
-- open image to access root file system
-- create an empty file with ```touch ssh``` to enable ssh per default
-- Flash to an SD card with e.g. Etcher
+- Download [Raspbian Stretch Image](https://downloads.raspberrypi.org/raspbian_lite_latest)
+- Open image to access root file system. On a Mac it's just double clicking it
+- Create an empty file with ```touch ssh``` to enable ssh per default. On a Mac open a terminal and ```cd /Volumes/boot```
+- Flash to an SD card with e.g. [Etcher](https://etcher.io/)
 - start the Pi and locate it on the network
 - ssh to the Pi with ```ssh hosenameOrIpAddress -l pi```
 - the password for user pi is ```raspberry```
@@ -18,7 +18,43 @@ This is a short howto to setup a Raspberry Pi (3) as a Homebridge server with ca
 - set up hostname, wifi, locale and keyboard layout, expand the filesystem, enable the camera module etc.
 - reboot
 
-## Installing Node.js and modules
+## System updates
+
+Issue a
+
+```plaintext
+apt update && apt upgrade -y
+```
+
+to update the whole system first.
+
+## Other machine settings
+
+Set up a real root user. 
+
+```plaintext
+sudo passwd
+```
+
+Also, you may want to set ssh access for the root user. Open the ```/etc/ssh/sshd_config``` file and search for the line
+
+```plaintext
+#PermitRootLogin prohibit-password
+```
+
+Change this to
+
+```plaintext
+PermitRootLogin yes #prohibit-password
+```
+
+Reboot the Pi or restart ssh with
+
+```plaintext
+sudo /etc/init.d/ssh restart
+```
+
+## Installing Node.js
 
 Add Node.js to the package list
 
@@ -26,17 +62,13 @@ Add Node.js to the package list
 curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
 ```
 
-Install Node.js and other packages
+Install Node.js and other packages. We need ffmeg only if we want to use a Pi camera. The installation may take a while.
 
 ```plaintext
-apt install nodejs node-semver ffmpeg
+apt install nodejs node-semver ffmpeg -y
 ```
 
-Optional set up a real root user
-
-```plaintext
-sudo passwd
-```
+## Install Node.js packages
 
 This will install all relevant node modules.
 
@@ -48,11 +80,10 @@ Set some rights for camera access
 
 ```plaintext
 usermod -aG video pi
-usermod -aG video homebridge
 usermod -aG video root
 ```
 
-Add video module codec to modules at startup
+If you want to use the Pi camera, add this video module codec to modules at startup
 
 ```plaintext
 nano /etc/modules
@@ -68,7 +99,15 @@ bcm2835-v4l2
 
 My config file is located in ```/root/.homebridge/config.json```
 
-And this is the content
+If you don't have that folder and file yet, create them (all commands as root user)
+
+```plaintext
+cd
+mkdir .homebridge
+nano .homebridge/config.json
+```
+
+And this is the content in my case. You may want to alter it depending on the plugins and devices you are using.
 
 ```json
 {
@@ -159,3 +198,21 @@ pm2 startup
 ## Reboot and check
 
 After reboot check if the server is running by opening ```http://hostname:8083```. This will bring up the config UI. To login use "admin" as username and password. You can change the password later in the UI.
+
+## Troubleshooting
+
+Whenever you experiment with adding and removing the homebridge to your Homekit system, it may occur that you cannot re-add the homebridge after you removed (for testing). In this case change the username property in the config file.
+
+In my case I could successfully re-add the bridge after changing this line:
+
+```plaintext
+"username": "CC:22:3D:E3:CE:30"
+```
+
+to
+
+```plaintext
+"username": "CC:22:3D:E3:CE:31"
+```
+
+in the config.json file. It seems that homekit chaches devices for a while so this is a roundtrip.
