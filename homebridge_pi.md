@@ -1,3 +1,5 @@
+![Homekit](homekit.png)
+
 # Installing Homebridge on a Raspberry Pi
 
 This is a short howto to setup a Raspberry Pi (3) as a Homebridge server with camera module for Apple Homekit. However, this also works with older models without built-in wifi.
@@ -30,7 +32,7 @@ to update the whole system first.
 
 ## Other machine settings
 
-Set up a real root user. 
+Set up a real root user.
 
 ```plaintext
 sudo passwd
