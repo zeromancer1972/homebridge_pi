@@ -1,6 +1,6 @@
 # Installing Homebridge on a Raspberry Pi
 
-This is a short howto to setup a Raspberry Pi (3) as a Homebridge server with camera module for Apple Homekit.
+This is a short howto to setup a Raspberry Pi (3) as a Homebridge server with camera module for Apple Homekit. However, this also works with older models without built-in wifi.
 
 ## Preparing the Pi
 
