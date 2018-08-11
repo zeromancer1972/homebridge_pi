@@ -88,7 +88,7 @@ usermod -aG video root
 If you want to use the Pi camera, add this video module codec to modules at startup
 
 ```plaintext
-nano /etc/modules
+sudo nano /etc/modules
 ```
 
 and add this line
