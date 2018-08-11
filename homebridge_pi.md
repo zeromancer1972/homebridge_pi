@@ -25,7 +25,7 @@ This is a short howto to setup a Raspberry Pi (3) as a Homebridge server with ca
 Issue a
 
 ```plaintext
-apt update && apt upgrade -y
+sudo apt update && apt upgrade -y
 ```
 
 to update the whole system first.
