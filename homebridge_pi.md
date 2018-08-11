@@ -67,7 +67,7 @@ curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
 Install Node.js and other packages. We need ffmeg only if we want to use a Pi camera. The installation may take a while.
 
 ```plaintext
-apt install nodejs node-semver ffmpeg -y
+sudo apt install nodejs node-semver ffmpeg -y
 ```
 
 ## Install Node.js packages
