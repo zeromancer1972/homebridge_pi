@@ -75,7 +75,7 @@ sudo apt install nodejs node-semver ffmpeg -y
 This will install all relevant node modules.
 
 ```plaintext
-npm install -g --unsafe-perm pm2 homebridge homebridge-config-ui-x homebridge-hue homebridge-camera-rpi homebridge-camera-ffmpeg homebridge-tplink-smarthome homebridge-cmdswitch2
+npm install -g --unsafe-perm pm2 homebridge homebridge-config-ui-x homebridge-hue homebridge-camera-rpi homebridge-camera-ffmpeg homebridge-tplink-smarthome homebridge-cmdswitch2 homebridge-http-switch
 ```
 
 Set some rights for camera access
