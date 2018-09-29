@@ -74,6 +74,8 @@ sudo apt install nodejs node-semver ffmpeg -y
 
 ### Raspberry Pi Zero W
 
+![Pi Zero W](pizerocam.png)
+
 For the Pi Zero W you cannot use predefined packages. Just download the dist package for ARMv6 architecture from [https://nodejs.org/en/download/](https://nodejs.org/en/download/)
 
 The unpack the archive with
