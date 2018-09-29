@@ -58,6 +58,8 @@ sudo /etc/init.d/ssh restart
 
 ## Installing Node.js
 
+### Raspberry Pi 2/3 B (+)
+
 Add Node.js to the package list
 
 ```plaintext
@@ -68,6 +70,28 @@ Install Node.js and other packages. We need ffmeg only if we want to use a Pi ca
 
 ```plaintext
 sudo apt install nodejs node-semver ffmpeg -y
+```
+
+### Raspberry Pi Zero W
+
+For the Pi Zero W you cannot use predefined packages. Just download the dist package for ARMv6 architecture from [https://nodejs.org/en/download/](https://nodejs.org/en/download/)
+
+The unpack the archive with
+
+```plaintext
+tar xvf <yourNodeFile.tar>
+```
+
+Copy all the files to your binary folder (it's in the $PATH automatically)
+
+```plaintext
+cp -r node.../* /usr/local
+```
+
+Check if node is found with
+
+```plaintext
+node -v
 ```
 
 ## Install Node.js packages
