@@ -69,7 +69,7 @@ curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
 Install Node.js and other packages. We need ffmeg only if we want to use a Pi camera. The installation may take a while.
 
 ```plaintext
-sudo apt install nodejs node-semver ffmpeg -y
+sudo apt install nodejs node-semver -y
 ```
 
 ### Raspberry Pi Zero W
@@ -78,7 +78,7 @@ sudo apt install nodejs node-semver ffmpeg -y
 
 For the Pi Zero W you cannot use predefined packages. Just download the dist package for ARMv6 architecture from [https://nodejs.org/en/download/](https://nodejs.org/en/download/)
 
-The unpack the archive with
+Then unpack the archive with
 
 ```plaintext
 tar xvf <yourNodeFile.tar>
@@ -94,6 +94,14 @@ Check if node is found with
 
 ```plaintext
 node -v
+```
+
+## Video codec
+
+For the camera you have to install the codec package:
+
+```plaintext
+sudo apt install ffmpeg -y
 ```
 
 ## Install Node.js packages
