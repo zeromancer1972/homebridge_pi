@@ -109,7 +109,7 @@ sudo apt install ffmpeg -y
 This will install all relevant node modules.
 
 ```plaintext
-npm install -g --unsafe-perm pm2 homebridge homebridge-config-ui-x homebridge-hue homebridge-camera-rpi homebridge-camera-ffmpeg homebridge-tplink-smarthome homebridge-cmdswitch2 homebridge-http-switch homebridge-http-regex
+npm install -g --unsafe-perm pm2 homebridge homebridge-config-ui-x homebridge-camera-rpi homebridge-camera-ffmpeg
 ```
 
 Set some rights for camera access
@@ -163,27 +163,6 @@ And this is the content in my case. You may want to alter it depending on the pl
             "log": "/var/log/homebridge.stdout.log",
             "error_log": "/var/log/homebridge.stderr.log",
             "restart": "/usr/local/bin/supervisorctl restart homebridge"
-        },
-        {
-            "platform": "TplinkSmarthome",
-            "name": "TplinkSmarthome",
-            "pollingInterval": 10,
-            "switchModels": [
-                "HS100"
-            ],
-            "broadcast": "255.255.255.255",
-            "devices": [
-                {
-                    "host": "192.168.2.216"
-                }
-            ]
-        },
-        {
-            "platform": "Hue",
-            "users": {
-                "001788FFFE6E4BC7": "jWBnbhj9isw1LY3dy40IkMce7w5v0P2nbKD3OrXN"
-            },
-            "lights": true
         }
     ],
     "accessories": []
