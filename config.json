@@ -1,0 +1,25 @@
+{
+    "bridge": {
+        "name": "Homebridge Pi Camera",
+        "username": "CC:22:3D:E3:CE:40",
+        "port": 51826,
+        "pin": "656-92-977"
+    },
+    "description": "This is a Raspberry IP Cam",
+    "platforms": [{
+            "platform": "rpi-camera",
+            "cameras": [{
+                "name": "Pi Camera"
+            }]
+        },
+        {
+            "platform": "config",
+            "name": "Config",
+            "port": 8083,
+            "log": "/var/log/homebridge.stdout.log",
+            "error_log": "/var/log/homebridge.stderr.log",
+            "restart": "/usr/local/bin/supervisorctl restart homebridge"
+        }
+    ],
+    "accessories": []
+}
