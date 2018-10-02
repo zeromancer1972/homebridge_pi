@@ -115,20 +115,13 @@ npm install -g --unsafe-perm pm2 homebridge homebridge-config-ui-x homebridge-hu
 Set some rights for camera access
 
 ```plaintext
-usermod -aG video pi
-usermod -aG video root
+usermod -aG video pi && usermod -aG video root
 ```
 
 If you want to use the Pi camera, add this video module codec to modules at startup
 
 ```plaintext
-sudo nano /etc/modules
-```
-
-and add this line
-
-```plaintext
-bcm2835-v4l2
+echo bcm2835-v4l2 >> /etc/modules
 ```
 
 ## Config file
