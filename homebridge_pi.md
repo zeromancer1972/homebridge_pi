@@ -78,6 +78,8 @@ sudo apt install nodejs node-semver -y
 
 For the Pi Zero W you cannot use predefined packages. Just download the dist package for ARMv6 architecture from [https://nodejs.org/en/download/](https://nodejs.org/en/download/)
 
+An alternative way could also be trying to use one of the command on this page: [https://github.com/sdesalas/node-pi-zero](https://github.com/sdesalas/node-pi-zero)
+
 Then unpack the archive with
 
 ```plaintext
